@@ -1,0 +1,40 @@
+datasource db {
+  provider = "postgresql"
+}
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String    @id @default(uuid())
+  email     String    @unique
+  name      String?
+  password  String?   // <- add this
+  sessions  Session[] // opposite relation field is Session.user
+  createdAt DateTime  @default(now())
+}
+
+model Session {
+  id         String            @id @default(uuid())
+  userId     String? // foreign key
+  user       User?             @relation(fields: [userId], references: [id])
+  title      String?
+  status     String            @default("recording")
+  transcript String?           @db.Text
+  summary    String?           @db.Text
+  duration   Int?
+  createdAt  DateTime          @default(now())
+  chunks     TranscriptChunk[]
+}
+
+model TranscriptChunk {
+  id        String   @id @default(uuid())
+  sessionId String
+  session   Session  @relation(fields: [sessionId], references: [id])
+  seq       Int
+  filename  String?
+  text      String?  @db.Text
+  createdAt DateTime @default(now())
+}
