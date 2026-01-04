@@ -1,7 +1,6 @@
-##🤖 ScribeAI — AI-Powered Meeting Scribing!
-
-
-##✨ Quick Summary
+## 🤖 ScribeAI — AI-Powered Meeting Scribing!
+---
+## ✨ Quick Summary
 
 ScribeAI is a prototype real-time meeting scribing app built to demonstrate low-latency audio processing. It uses:
 
@@ -14,8 +13,8 @@ PostgreSQL (Supabase) for secure session storage
 Audio is captured in 15–30s chunks, streamed to the server, saved, and later processed into transcripts and summaries by a background worker.
 
 Note: Transcription uses safe stubs. Gemini/Whisper integration is implemented but disabled due to billing constraints.
-
-##🛠️ Tech Stack & Architecture
+---
+## 🛠️ Tech Stack & Architecture
 Component	Technology	Purpose
 Frontend	Next.js 14, TypeScript	Routing, SSR/SSG, UI
 Real-time	Node.js, Socket.io	Low-latency audio chunk streaming
@@ -52,8 +51,9 @@ Very reliable
 Low complexity
 
 Ideal for long recordings and cost control
-
-##🚀 How to Run Locally
+---
+## 🚀 How to Run Locally
+```
 1. Environment Setup (.env.local)
 DATABASE_URL=postgresql://postgres:<DB_PASSWORD>@<HOST>:5432/postgres
 DB_SSL=true
@@ -72,7 +72,8 @@ npm run start:socket
 
 # Next.js app (3000)
 npm run dev
-
+```
+---
 3. How to Test
 
 Register & sign in (creates sa_session cookie)
@@ -86,7 +87,7 @@ Check /sessions
 Download transcript:
 /api/sessions/<id>/download?format=txt
 
-📂 Project Structure
+## 📂 Project Structure
 app/
   sessions/record/page.tsx      – Recording UI
   sessions/page.tsx             – Session list
@@ -102,8 +103,9 @@ server/worker/processSession.js – Background transcription worker
 lib/db.ts                       – Postgres connection
 lib/auth.server.ts              – JWT + cookie helpers
 lib/gemini.ts                   – Gemini placeholder client
+---
 
-⚙️ Git Workflow
+## ⚙️ Git Workflow
 Initial Repo Setup
 git init
 git add .
@@ -125,7 +127,7 @@ feat(session): add worker
 
 fix(auth): correct jwt expiration
 
-⚠️ Why Gemini Transcription Is Disabled
+###⚠️ Why Gemini Transcription Is Disabled
 
 Enabling Gemini requires:
 
@@ -150,8 +152,8 @@ Add GEMINI_API_KEY to .env.local
 Configure lib/gemini.ts
 
 Test accuracy & cost usage
-
-📈 Long-Session Scalability
+---
+## 📈 Long-Session Scalability
 
 Long meetings risk memory pressure and network issues. ScribeAI reduces this by:
 
