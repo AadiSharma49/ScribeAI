@@ -1,8 +1,7 @@
-🤖 ScribeAI — AI-Powered Meeting Scribing!
+##🤖 ScribeAI — AI-Powered Meeting Scribing!
 
-![Screenshot](/mnt/data/Screenshot 2025-11-22 180719.png)
 
-✨ Quick Summary
+##✨ Quick Summary
 
 ScribeAI is a prototype real-time meeting scribing app built to demonstrate low-latency audio processing. It uses:
 
@@ -16,7 +15,7 @@ Audio is captured in 15–30s chunks, streamed to the server, saved, and later p
 
 Note: Transcription uses safe stubs. Gemini/Whisper integration is implemented but disabled due to billing constraints.
 
-🛠️ Tech Stack & Architecture
+##🛠️ Tech Stack & Architecture
 Component	Technology	Purpose
 Frontend	Next.js 14, TypeScript	Routing, SSR/SSG, UI
 Real-time	Node.js, Socket.io	Low-latency audio chunk streaming
@@ -54,7 +53,7 @@ Low complexity
 
 Ideal for long recordings and cost control
 
-🚀 How to Run Locally
+##🚀 How to Run Locally
 1. Environment Setup (.env.local)
 DATABASE_URL=postgresql://postgres:<DB_PASSWORD>@<HOST>:5432/postgres
 DB_SSL=true
