@@ -1,5 +1,5 @@
 ## 🤖 ScribeAI — AI-Powered Meeting Scribing!
----
+
 ## ✨ Quick Summary
 
 ScribeAI is a prototype real-time meeting scribing app built to demonstrate low-latency audio processing. It uses:
